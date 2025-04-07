@@ -1,0 +1,108 @@
+.produtos-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Organiza os elementos em coluna */
+  gap: 30px; /* Espaçamento entre o formulário e a lista */
+}
+
+.page-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: #ef4444;
+  background-color: #fee2e2;
+  padding: 10px 15px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column; /* Organiza os elementos em coluna */
+  gap: 20px; /* Espaçamento entre os itens */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  margin-top: 20px;
+}
+
+form {
+  width: 100%;
+  max-width: 600px; /* Limita a largura máxima do formulário */
+  padding: 20px;
+  border: 1px solid #d1d5db; /* Contorno cinza claro */
+  border-radius: 8px; /* Bordas arredondadas */
+  background-color: #ffffff; /* Fundo branco */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+form h2 {
+  text-align: center;
+  color: #131111;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #4b6185;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #000000; /* Contorno cinza claro */
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #ffffff; /* Fundo cinza claro */
+  color: black;
+}
+
+form textarea {
+  resize: vertical; /* Permite redimensionar apenas verticalmente */
+  min-height: 100px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #1e3a8a; /* Azul escuro */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #164eab; /* Azul mais escuro ao passar o mouse */
+}
+
+.product-list {
+  width: 100%;
+  max-width: 800px; /* Define uma largura máxima para a lista */
+  padding: 10px;
+  border: 1px solid #d1d5db; /* Contorno cinza claro */
+  border-radius: 8px; /* Bordas arredondadas */
+  background-color: #ffffff; /* Fundo branco */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+@media (min-width: 992px) {
+  .page-content {
+    flex-direction: column; /* Mantém o layout em coluna mesmo em telas maiores */
+  }
+}
