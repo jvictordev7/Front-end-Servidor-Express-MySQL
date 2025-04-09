@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header>
       <div className="header-logo">
-        <Link to="/">TILAPIO</Link>
+        <Link to="/">TILÁPIO</Link>
       </div>
       
       <button className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>

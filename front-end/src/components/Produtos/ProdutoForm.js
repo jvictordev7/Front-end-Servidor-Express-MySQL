@@ -16,6 +16,8 @@ const ProdutoForm = ({ produto, onSubmit, onCancel }) => {
         descricao: produto.descricao || '',
         preco: produto.preco || ''
       });
+    } else {
+      setFormData({ nome: '', descricao: '', preco: '' }); // Limpa os campos se não houver produto
     }
   }, [produto]);
 
@@ -30,6 +32,7 @@ const ProdutoForm = ({ produto, onSubmit, onCancel }) => {
       ...formData,
       preco: parseFloat(formData.preco)
     });
+    setFormData({ nome: '', descricao: '', preco: '' }); // Limpa os campos após o envio
   };
 
   return (

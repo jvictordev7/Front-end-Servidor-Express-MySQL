@@ -5,8 +5,8 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <div className="hero-section">
-        <h1>Bem-vindo ao TILAPIO</h1>
-        <p>Soluções em Aquicultura Moderna</p>
+        <h1>Bem-vindo TILÁPIO</h1>
+        <p>CRUD de pedidos e clientes.</p>
       </div>
       
       <div className="features-section">

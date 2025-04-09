@@ -18,6 +18,8 @@ const ClienteForm = ({ cliente, onSubmit, onCancel }) => {
         email: cliente.email || '',
         idade: cliente.idade || ''
       });
+    } else {
+      setFormData({ nome: '', sobrenome: '', email: '', idade: '' }); // Limpa os campos se não houver cliente
     }
   }, [cliente]);
 
@@ -29,6 +31,7 @@ const ClienteForm = ({ cliente, onSubmit, onCancel }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
+    setFormData({ nome: '', sobrenome: '', email: '', idade: '' }); // Limpa os campos após o envio
   };
 
   return (
