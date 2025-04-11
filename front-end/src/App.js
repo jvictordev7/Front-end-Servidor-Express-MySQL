@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ClientesPage from './pages/ClientesPage';
 import ProdutosPage from './pages/ProdutosPage';
@@ -18,6 +19,8 @@ function App() {
           <Route path="/produtos" element={<ProdutosPage />} />
         </Routes>
       </main>
+
+      <Footer />
     </div>
   );
 }

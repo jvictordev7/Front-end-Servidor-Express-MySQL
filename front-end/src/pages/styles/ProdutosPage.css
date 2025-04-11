@@ -1,0 +1,260 @@
+/* Página principal */
+.produtos-page {
+    padding: 40px;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Cabeçalho */
+  .page-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .page-header h1 {
+    font-size: 36px;
+    color: black;
+    font-weight: bold;
+  }
+  
+  /* Layout principal */
+  .page-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+  }
+  
+  /* Formulário */
+  .form-container {
+    flex: 1;
+    min-width: 350px;
+    max-width: 400px;
+    background-color: #ffffffee;
+    backdrop-filter: blur(4px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.199);
+    overflow-y: auto;
+    max-height: 600px;
+  }
+  
+  .form-container h2 {
+    margin-bottom: 20px;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: black;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #0000003d;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    resize: none;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+    outline: none;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #2563eb;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .btn-primary:hover {
+    background-color: #1e3a8a;
+    transform: scale(1.05);
+  }
+  
+  .btn-secondary {
+    background-color: #6b7280;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #4b5563;
+    transform: scale(1.05);
+  }
+  
+  /* Lista de Produtos */
+  .table-container {
+    flex: 2;
+    min-width: 600px;
+    background-color: #ffffffee;
+    backdrop-filter: blur(4px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.199);
+    max-height: 600px;
+    overflow-y: auto;
+  }
+  
+  .table-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #0000003d;
+  }
+  
+  th {
+    background-color: #f3f4f6;
+    font-weight: bold;
+    color: black;
+  }
+  
+  tr:hover {
+    background-color: #f9fafb;
+  }
+  
+  .btn-edit,
+  .btn-delete {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn-edit {
+    background-color: #fbbf24;
+    color: #1f2937;
+  }
+  
+  .btn-edit:hover {
+    background-color: #f59e0b;
+  }
+  
+  .btn-delete {
+    background-color: #ef4444;
+    color: #fff;
+  }
+  
+  .btn-delete:hover {
+    background-color: #dc2626;
+  }
+  
+  /* Scroll personalizado */
+  .table-container::-webkit-scrollbar,
+  .form-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .table-container::-webkit-scrollbar-thumb,
+  .form-container::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 4px;
+  }
+  
+  .table-container::-webkit-scrollbar-track,
+  .form-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Estados */
+  .loading,
+  .no-data {
+    text-align: center;
+    padding: 20px;
+    color: #6b7280;
+    font-size: 18px;
+  }
+  
+  /* Mensagens */
+  .error-message {
+    color: #ef4444;
+    background-color: #fee2e2;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .success-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #22c55e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeInOut 3s ease-in-out;
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-10px);
+    }
+    10%, 90% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-10px);
+    }
+  }
+  
