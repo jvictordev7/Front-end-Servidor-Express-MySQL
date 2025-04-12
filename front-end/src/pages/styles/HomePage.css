@@ -14,7 +14,7 @@ html, body, #root {
   .hero-section {
     text-align: center;
     padding: 60px 20px;
-    background-color: ffffff;
+    background-color: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.199);
     border-radius: 8px;
     margin-bottom: 40px;
