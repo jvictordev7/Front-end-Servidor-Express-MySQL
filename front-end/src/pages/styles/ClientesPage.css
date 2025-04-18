@@ -1,10 +1,11 @@
+/* Página principal */
 .clientes-page {
-  padding: 40px;
-  min-height: 100vh; /* Garante que o gradiente cubra toda a altura da viewport */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
- 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden; /* Impede rolagem lateral da página */
 }
 
 /* Cabeçalho */
@@ -15,17 +16,16 @@
 
 .page-header h1 {
   font-size: 36px;
-  color:   black;
+  color: black;
   font-weight: bold;
 }
-
-
 
 /* Layout principal */
 .page-content {
   display: flex;
   gap: 30px;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 /* Formulário */
@@ -34,17 +34,15 @@
   min-width: 350px;
   max-width: 400px;
   background-color: #ffffffee;
-  backdrop-filter: blur(4px);
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.199);
   overflow-y: auto;
-  max-height: 600px;
 }
 
 .form-container h2 {
   margin-bottom: 20px;
-  color:   black;
+  color: black;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
@@ -58,7 +56,7 @@
   display: block;
   font-weight: 600;
   margin-bottom: 8px;
-  color:  black;
+  color: black;
 }
 
 .form-group input {
@@ -85,7 +83,7 @@
 
 .btn-primary {
   background-color: #2563eb;
-  font-size:  18px;
+  font-size: 18px;
   color: #fff;
   padding: 10px 50px;
   border: none;
@@ -94,7 +92,7 @@
   font-weight: bold;
   transition: background-color 0.3s, transform 0.2s;
   display: block;
-  margin: 0 auto; /* Centraliza horizontalmente */
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -124,18 +122,16 @@
   flex: 2;
   min-width: 600px;
   background-color: #ffffffee;
-  backdrop-filter: blur(4px);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.199);
-  max-height: 600px;
-  overflow-y: auto;
+  overflow-x: auto;
 }
 
 .table-container h2 {
   margin-bottom: 20px;
   font-size: 24px;
-  color:   black;
+  color: black;
   font-weight: bold;
   text-align: center;
 }
@@ -144,13 +140,14 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-size: 16px;
-  
+  table-layout: fixed;
 }
 
 th, td {
   padding: 12px 15px;
-  text-align: left;
+  text-align: center;
   border: 1px solid #0000003d;
+  word-wrap: break-word;
 }
 
 th {
@@ -195,6 +192,7 @@ tr:hover {
 .table-container::-webkit-scrollbar,
 .form-container::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 .table-container::-webkit-scrollbar-thumb,
@@ -216,7 +214,6 @@ tr:hover {
   color: #6b7280;
   font-size: 18px;
 }
-
 
 /* Mensagens */
 .error-message {
@@ -244,17 +241,154 @@ tr:hover {
   animation: fadeInOut 3s ease-in-out;
 }
 
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-10px);
+/* Media Queries */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .page-content {
+    flex-direction: column;
   }
-  10%, 90% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+
+  .form-container,
+  .table-container {
+    width: 100%;
+    max-width: 100%;
   }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-10px);
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 10px 12px;
   }
 }
+
+/* Telas menores (<=768px) */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 28px;
+  }
+
+  .form-container h2,
+  .table-container h2 {
+    font-size: 22px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Telas muito pequenas (<=480px) */
+@media (max-width: 480px) {
+  .clientes-page {
+    padding: 15px 10px;
+    font-size: 14px;
+    align-items: center;
+  }
+
+  .page-content {
+    align-items: center;
+  }
+
+  .form-container,
+  .table-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+  }
+
+  .form-container h2,
+  .table-container h2 {
+    font-size: 20px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+    min-width: 350px;        /* Largura mínima para forçar rolagem se necessário */
+    table-layout: fixed;     /* Faz as colunas se adaptarem ao espaço disponível */
+    font-size: 12px;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 4px 6px;        /* Reduz paddings para economizar espaço */
+    font-size: 12px;
+    text-align: left;
+    word-wrap: break-word;   /* Quebra de texto automática */
+  }
+
+  /* Estilização dos botões */
+  .btn-edit,
+  .btn-delete {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+  /* Definindo larguras para colunas principais */
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 100pxpx;
+    padding-left: 100px; /* Adiciona um espaçamento à esquerda para empurrar o conteúdo para a direita */
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 30px;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 10px;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 100px;
+    padding-right: 50px;
+    text-align: center;
+  }
+
+  /* Ocultar colunas opcionais em telas pequenas, se necessário */
+  
+  th:nth-child(3),
+  td:nth-child(3) {
+    display: none;
+  }
+  
+  th:nth-child(2),
+  td:nth-child(2) {
+    display: none;
+  }
+  
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+

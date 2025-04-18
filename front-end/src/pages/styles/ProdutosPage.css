@@ -243,18 +243,124 @@
     animation: fadeInOut 3s ease-in-out;
   }
   
-  @keyframes fadeInOut {
-    0% {
-      opacity: 0;
-      transform: translateX(-50%) translateY(-10px);
-    }
-    10%, 90% {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(-50%) translateY(-10px);
+  @media (max-width: 1023px) {
+    .page-content {
+      flex-direction: column;
     }
   }
   
+  @media (max-width: 768px) {
+    .produtos-page {
+      padding: 1.5rem;
+    }
+    
+    .page-header h1 {
+      font-size: 1.75rem;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+    }
+  }
+  
+  /* Telas muito pequenas (<=480px) */
+@media (max-width: 480px) {
+  .produtos-page {
+    padding: 15px 10px;
+    font-size: 14px;
+    align-items: center;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-container,
+  .table-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .form-container h2,
+  .table-container h2 {
+    font-size: 20px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+    min-width: 350px;        /* Largura mínima para forçar rolagem se necessário */
+    table-layout: fixed;     /* Faz as colunas se adaptarem ao espaço disponível */
+    font-size: 12px;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 4px 6px;        /* Reduz paddings para economizar espaço */
+    font-size: 12px;
+    text-align: left;
+    word-wrap: break-word;   /* Quebra de texto automática */
+  }
+
+  /* Ajuste de botões */
+  .btn-edit,
+  .btn-delete {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+  /* Definindo larguras para colunas principais */
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 50px;
+    padding-left: 100px; /* Adiciona um espaçamento à esquerda para empurrar o conteúdo para a direita */
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 30px;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 10px;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 100px;
+  }
+
+  /* Ocultar colunas opcionais em telas pequenas */
+  /* th:nth-child(3),
+  td:nth-child(3),
+  th:nth-child(2),
+  td:nth-child(2) {
+    display: none;
+  } */
+}
+
+/* ====== ANIMAÇÕES ====== */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-1rem); }
+  10%, 90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-1rem); }
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}

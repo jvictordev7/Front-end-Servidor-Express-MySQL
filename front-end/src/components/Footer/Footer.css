@@ -1,23 +1,31 @@
+/* Certifique-se de que o body e o html ocupem 100% da altura */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* O conteúdo principal deve crescer para ocupar o espaço disponível */
+#root {
+  flex: 1;
+}
+
+/* Footer */
 .footer {
-    background-color: rgba(0, 0, 0, 0.144);
-    color: rgb(0, 0, 0);
-    padding: 10px 40px;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.144);
+  color: rgb(0, 0, 0);
+  padding: 10px 40px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px 20px; /* Reduz o padding */
+    font-size: 14px; /* Ajusta o tamanho da fonte */
+    margin-top: auto; /* Garante que o footer fique na parte de baixo */
   }
-  
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .footer-content p {
-    margin: 0;
-    font-size: 16px;
-  }
-  
-  
+}
