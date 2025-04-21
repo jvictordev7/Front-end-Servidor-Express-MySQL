@@ -41,7 +41,7 @@ const ProdutosPage = () => {
       setTimeout(() => setSuccessMessage(null), 3000);
     } catch (err) {
       console.error(err);
-      setError('Erro ao salvar produto. Verifique os dados ou tente novamente mais tarde.');
+      setError('Erro ao salvar produto. Você já adicionou um produto tente novamente mais tarde.');
     }
   };
 
@@ -53,7 +53,7 @@ const ProdutosPage = () => {
       setTimeout(() => setSuccessMessage(null), 3000);
     } catch (err) {
       console.error(err);
-      setError('Erro ao excluir produto. Tente novamente mais tarde.');
+      setError('Erro ao excluir produto. Você já adicionou um produto tente novamente mais tarde.');
     }
   };
 
