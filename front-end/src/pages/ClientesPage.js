@@ -44,7 +44,7 @@ const ClientesPage = () => {
       setTimeout(() => setSuccessMessage(null), 3000);
     } catch (err) {
       console.error(err);
-      setError('Erro ao salvar cliente. Verifique os dados e tente novamente.');
+      setError('Erro ao salvar cliente. Verifique os dados ou tente novamente mais tarde.');
     }
   };
 
@@ -56,7 +56,7 @@ const ClientesPage = () => {
       setTimeout(() => setSuccessMessage(null), 3000);
     } catch (err) {
       console.error(err);
-      setError('Erro ao excluir cliente. Tente novamente.');
+      setError('Erro ao excluir cliente. Tente novamente mais tarde.');
     }
   };
 
